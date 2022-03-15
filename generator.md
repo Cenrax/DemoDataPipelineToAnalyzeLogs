@@ -45,3 +45,20 @@ for i in count(5):
     print(i)
 ```
 
+Now lets look at the ****Generator Comprehensions****
+Generator comprehensions are extremely similar to list comprehensions. We can turn any list comprehension into a generator comprehension by replacing the square brackets [] to parenthesis (). For example, here's how we could write the squares function in the previous screen as a list and generator expression:
+
+```
+squared_list = [i * i for i in range(20)]
+squared_gen = (i * i for i in range(20))
+```
+
+Before you begin replacing all your lists as generators, let's discuss a major drawback of the generator. Suppose we had two places in our code that wanted to use the squared_gen generator. With a list, squared_list, we could easily do:
+
+```
+num_to_square = {}
+for idx, i in enumerate(squared_list):
+    num_to_square[idx] = i
+print(num_to_square)
+```
+{0: 0, 1: 1, 2: 4, 3: 9 ...}
