@@ -55,3 +55,11 @@ with open('example_log.txt') as file:
         do_something()
 ```
 
+This stream-like behavior is extremely helpful when working with large data sets. We can replicate this behavior with other iterators with the use of generators. A generator is an iterable object that is created from a generator function.
+
+The generator function differs from a regular function by two important differences:
+
+    - A generator uses yield, instead of return. (However, a return statement is used to stop iteration).
+    - Local variables are kept in memory until the generator completes.
+    
+For more details into generator see the generator.md file 
