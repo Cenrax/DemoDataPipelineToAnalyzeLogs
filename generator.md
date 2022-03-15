@@ -27,3 +27,21 @@ for i in count():
     print(i)
 ```
 
+Using the next() function, you can see the generator and yield suspension work in action. In an iteration (like a for loop), the Python interpreter continuously calls the next() function to receive the "next" element in the iterable. In a generator, each call to the next() function completes a cycle, and then stops at the next yield. 
+
+Suppose we wanted to give an upper limit to the count() function. Then we need to use a return statement within the generator. The return statement is one way that a Python loop (eg. for) knows when to stop looping. Using return without an argument ends the function and returns None, breaking the loop. Here's how we would update count() using return:
+
+```
+# Count with an upper limit of `N`.
+def count(N):
+    i = 1
+    while True
+        if i > N:
+            return
+        yield i
+        i += 1
+
+for i in count(5):
+    print(i)
+```
+
