@@ -19,12 +19,12 @@ The syntax of the files are as follows:
 ```
 $remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent"
 ```
-$remote_addr — the ip address of the client making the request to the server.
-$remote_user — if the client authenticated with basic authentication, this is the user name (blank in the examples above).
-$time_local — the local time when the request was made.
-$request — the type of request, and the URL that it was made to.
-$status — the response status code from the server.
-$body_bytes_sent — the number of bytes sent by the server to the client in the response body.
-$http_referrer — the page that the client was on before sending the current request.
-$http_user_agent — information about the browser and system of the client.
+- $remote_addr — the ip address of the client making the request to the server.
+- $remote_user — if the client authenticated with basic authentication, this is the user name (blank in the examples above).
+- $time_local — the local time when the request was made.
+- $request — the type of request, and the URL that it was made to.
+- $status — the response status code from the server.
+- $body_bytes_sent — the number of bytes sent by the server to the client in the response body.
+- $http_referrer — the page that the client was on before sending the current request.
+- $http_user_agent — information about the browser and system of the client.
 
