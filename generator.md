@@ -79,7 +79,7 @@ for i in squared_list:
 Using a generator, however, the second loop will not run. Like a file, a generator will exhaust all it's elements once the final yield has been executed. Be cautious of this behavior when using generators, like squared_gen in your code!
 ```
 num_to_square = {}
-for idx, i in enumerate(squared_list):
+for idx, i in enumerate(squared_gen):
     num_to_square[idx] = i
 print(num_to_square)
 ```
@@ -87,7 +87,7 @@ print(num_to_square)
 {0: 0, 1: 1, 2: 4, 3: 9 ...}
 ```
 ```
-for i in squared_list:
+for i in squared_gen:
     print(i)
 ```
 ```
