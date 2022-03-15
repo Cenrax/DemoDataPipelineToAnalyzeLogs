@@ -28,3 +28,30 @@ $remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$
 - $http_referrer — the page that the client was on before sending the current request.
 - $http_user_agent — information about the browser and system of the client.
 
+***Before diving to the pipeline we need to understand what is a Generator in Python and why we need it***
+When creating a list, Python loads each element of the list into RAM. For files that exceed multiple gigabytes, this file loading can cause a program to run out of memory.
+
+So how do we overcome this:
+Instead of reading the file into memory, we can take advantage of file streaming. File streaming works by breaking a file into small sections (called chunks), and then loaded one at time into memory. Once a chunk has been exhausted (all the bytes of that chunk has been read), Python requests the next chunk, and then that chunk is loaded into memory to be iterated on.
+
+This is actually abstracted from us using the context manager
+```
+with open('example_log.txt') as file:
+    for line in file:
+        # The file acts like an iterator.
+        print(line)
+```
+We can see evidence of exhausted bytes if you try to read from the opened file again:
+```
+with open('example_log.txt') as file:
+    for line in file:
+        do_something()
+
+    # At this point, the file has been read and
+    # no unread bytes are remaining.
+    for line in file:
+        # The `file` is empty and the loop ends
+        # immediately.
+        do_something()
+```
+
