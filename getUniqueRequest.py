@@ -41,3 +41,6 @@ csv_file = build_csv(
 )
 uniques = count_unique_request(csv_file)
 print(uniques)
+summarized_file = open('summarized.csv', 'r+')
+summarized_csv = build_csv(uniques, summarized_file, header=['request_type', 'count'])
+print(summarized_file.readlines())
