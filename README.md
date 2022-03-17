@@ -67,7 +67,7 @@ For more details into generator see the generator.md file
 
 After parsing our logs into a generator of tuples, it's now time to write a task, and save the rows to a CSV file. This keeps the data in a well known data storage structure that we can use in future tasks. In the next lesson, we will discuss the role of files in a data pipeline.
 
-Please look at the createCSV.py to see how we are doing that
+Please look at the ***createCSV.py** to see how we are doing that
 
 Unfortunately, if we wanted to append the header to the list of rows, then we had to convert those rows from a generator to list. By converting, we're losing the benefit of streaming the rows, and therefore there would be no point in creating a generator in the first place. If we want to keep the generator behavior, and insert a header, then we should use the itertools.chain() function to combine the two iterables.
 
@@ -85,7 +85,7 @@ for ele in itertools.chain(nums, letters, randoms):
     print(ele)
 ```
 
-Now we can get the unique request type using the file getUniqueRequestType.py and we will get an dictionary containing the results
+Now we can get the unique request type using the file ***getUniqueRequestType.py*** and we will get an dictionary containing the results
 
 ```
 {
