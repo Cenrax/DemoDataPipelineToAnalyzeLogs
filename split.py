@@ -1,4 +1,18 @@
 log = open('example_log.txt')
+
+''''
+utility function to convert the date and remove extra quotes
+'''
+def parse_time(time_str):
+    """
+    Parses time in the format [30/Nov/2017:11:59:54 +0000]
+    to a datetime object.
+    """
+    time_obj = datetime.strptime(time_str, '[%d/%b/%Y:%H:%M:%S %z]')
+    return time_obj
+
+def strip_quotes(s):
+    return s.replace('"', '')
 def parse_log(log):
     for line in log:
         split_line = line.split()
