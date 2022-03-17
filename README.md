@@ -85,4 +85,13 @@ for ele in itertools.chain(nums, letters, randoms):
     print(ele)
 ```
 
+Now we can get the unique request type using the file getUniqueRequestType.py and we will get an dictionary containing the results
+
+```
+{
+    'GET': 3334,
+    'PUT': 3367,
+    'POST': 3299
+}
+```
 
