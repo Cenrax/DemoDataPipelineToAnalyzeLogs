@@ -63,3 +63,8 @@ The generator function differs from a regular function by two important differen
     - Local variables are kept in memory until the generator completes.
     
 For more details into generator see the generator.md file 
+
+
+After parsing our logs into a generator of tuples, it's now time to write a task, and save the rows to a CSV file. This keeps the data in a well known data storage structure that we can use in future tasks. In the next lesson, we will discuss the role of files in a data pipeline.
+
+Please look at the createCSV.py to see how we are doing that
